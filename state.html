@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Cabin|Open+Sans" rel="stylesheet">
+<style> tr:hover {background-color:#f5f5f5;} </style>
+
+	<h1>{{ viet['State'] }}</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+
+	<p>
+		{{viet['State']}} has a Vietnamese population of {{viet['Total Population']}}, according to <a href="https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=bkmk">a 2011-2015 ACS survey</a>. This population makes up {{viet['Total Percentage']}} of {{viet['State']}}'s population.
+
+		<br><br>
+
+		Out of those {{viet['Total Population']}} Vietnamese Americans, there are {{viet['18+ Citizen Pop']}} registered voters who are of age. This breaks down into {{viet['18+ Citizen M %']}}% male voters and {{viet['18+ Citizen F %']}}% female voters.
+
+		<br><br>
+
+		Click one of the tabs below to see further breakdowns of Vietnamese American statistics.
+
+		<br>
+
+		<h2>Total Population Statistics</h2>
+
+		<br>
+
+		<div class="total">
+				<table style="width:100%">
+		  		<tr>
+		    		<th>Description</th>
+		    		<th>Population</th>
+		    		<th>Percentage</th>
+		  		</tr>
+		  		<tr>
+		    		<td>Total Vietnamese Population in {{viet['Id2']}}</td>
+		    		<td>{{viet['Total V Population']}}</td>
+		    		<td>{{viet['Total Percentage']}}%</td>
+		  		</tr>
+					<tr>
+		    		<td>Total Vietnamese Male Population in {{viet['Id2']}}</td>
+		    		<td>{{viet['TM Population']}}</td>
+		    		<td>{{viet['TM %']}}%</td>
+		  		</tr>
+					<tr>
+						<td>Total Vietnamese Female Population in {{viet['Id2']}}</td>
+						<td>{{viet['TF Population']}}</td>
+						<td>{{viet['TF %']}}%</td>
+					</tr>
+
+				</table>
+		</div>
+
+		<br>
+
+		<h2>Population Statistics by Age</h2>
+
+		<br>
+
+		<div class="age">
+				<table style="width:100%">
+		  		<tr>
+		    		<th>Description</th>
+		    		<th>Population</th>
+		    		<th>Percentage</th>
+		  		</tr>
+					<tr>
+						<td>Median Age for Vietnamese Population in {{viet['Id2']}}</td>
+						<td>{{viet['Median age']}} years old</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} Under 5</td>
+						<td>{{viet['Under 5 Pop']}}</td>
+						<td>{{viet['Under 5 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 5 to 9</td>
+						<td>{{viet['5 to 9 POp']}}</td>
+						<td>{{viet['5 to 9 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 10 to 14</td>
+						<td>{{viet['10 to 14 Pop']}}</td>
+						<td>{{viet['10 to 14 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 15 to 19</td>
+						<td>{{viet['15 to 19 Pop']}}</td>
+						<td>{{viet['15 to 19 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 20 to 24</td>
+						<td>{{viet['20 to 24 Pop']}}</td>
+						<td>{{viet['20 to 24 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 25 to 34</td>
+						<td>{{viet['25 to 34 Pop']}}</td>
+						<td>{{viet['25 to 34 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 35 to 44</td>
+						<td>{{viet['35 to 44 Pop']}}</td>
+						<td>{{viet['35 to 44 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 45 to 54</td>
+						<td>{{viet['45 to 54 Pop']}}</td>
+						<td>{{viet['45 to 54 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 55 to 59</td>
+						<td>{{viet['55 to 59 Pop']}}</td>
+						<td>{{viet['55 to 59 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 60 to 64</td>
+						<td>{{viet['60 to 64 Pop']}}</td>
+						<td>{{viet['60 to 64 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 65 to 74</td>
+						<td>{{viet['65 to 74 Pop']}}</td>
+						<td>{{viet['65 to 74 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 75 to 84</td>
+						<td>{{viet['75 to 84 Pop']}}</td>
+						<td>{{viet['75 to 84 %']}}%</td>
+					</tr>
+					<tr>
+						<td>Total Vietnamese Population in {{viet['Id2']}} 85+</td>
+						<td>{{viet['85+ Pop']}}</td>
+						<td>{{viet['85+ %']}}%</td>
+					</tr>
+				</table>
+		</div>
+
+	</p>
+
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="{{ url_for('index') }}">Return to the list</a> to select a learn more about another state.</p>
+
+
+
+{% endblock %}

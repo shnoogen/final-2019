@@ -1,0 +1,46 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Vietnamese Diaspora
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<div class="container">
+	<div class="row">
+		<div class="col-xl-12 text-center">
+
+			<h1 class="mt-5">Explore the Vietnamese American Diaspora</h1>
+
+			<p class="lead">Vietnamese Americans, Americans of Vietnamese descent, make up almost half of overseas Vietnamese people and are the fourth-largest Asian American group. Prior to 1975, there were less than 1,000 recorded Vietnamese immigrants in the United States of America. Following the Fall of Saigon on April 30, 1975, 125,000 Vietnamese immigrated to the USA in search of a better life.
+
+			<br><br>
+
+			This page contains the most recent survey concerning Vietnamese American populations. Explore to learn how the Vietnamese diaspora has grown from only 650 people before 1975, to 125,000 at the end of 1975, to today.
+
+			<br><br>
+
+			Hover over the map to learn about Vietnamese populations in different states!</p>
+
+			<div>
+    		<a href="https://plot.ly/~shnoogen/2/?share_key=FRIpUkz9jNTeyzvVWodKI2" target="_blank" title="d3-cloropleth-map" style="display: block; text-align: center;"><img src="https://plot.ly/~shnoogen/2.png?share_key=FRIpUkz9jNTeyzvVWodKI2" alt="d3-cloropleth-map" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    		<script data-plotly="shnoogen:2" sharekey-plotly="FRIpUkz9jNTeyzvVWodKI2" src="https://plot.ly/embed.js" async></script>
+			</div>
+
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-lg-6 col-md-8 col-sm-10 text-center alert alert-warning p-4">
+			<p>To get an in-depth look at population statistics about the Vietnamese American population, select a state below.</p>
+
+			{{ wtf.quick_form(form) }}
+
+		</div>
+	</div>
+
+	{% include 'footer.html' %}
+</div>
+
+{% endblock %}
